@@ -1,0 +1,101 @@
+{% load static %}
+{% load fontawesome_5 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My Django</title>
+    <link href="{% static 'w3.css' %}" rel="stylesheet" />
+	
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	{% fontawesome_5_static %}
+
+</head>
+<body>
+<div class="w3-container w3-center w3-teal">
+<h1>Heart Disease Prediction Result</h1>
+</div>
+<br>
+
+  {% if result == 0 %}
+  
+  <div class="w3-container w3-center w3-padding w3-round">
+    <h5 class="w3-red w3-card-4" style=" style="width: 30%;margin: auto;"><span>Good,you are healthy,keep it up by less sugar</span></h5>
+
+  {% elif result == 1  %}
+    
+    <div class="w3-container w3-center w3-padding w3-round">
+      <h1 class=" w3-card-4" style="style="width: 30%;;margin: auto;">You maybe suffering from heart disease,you need to see a doctor</h1>
+	  
+	  </div>
+    
+    
+  
+
+   {% endif%}
+
+   
+
+  
+</div>
+<br>
+<div class="w3-container w3-center">
+  <button  class="w3-teal w3-center w3-padding w3-round w3-border-teal"><a href="{% url 'index' %}">back</a></button>
+  </div>   
+
+<br>
+<div class="w3-container w3-teal">
+
+    <div class="w3-row">
+
+  <div class="w3-half w3-container">
+          <h4 >About the App</h4>
+          <p>the app was build with Django and W3.CSS(modern css framework) for Predicting heart disease.</p>
+Made by <a  href="https://twitter.com/Alamin_Magaga">Alamin M Magaga</a><br/>
+      Founder<a href="https://twitter.com/Magtech_Dihub"> @Magtech Digital Hub</a>
+
+<br><br>
+   </div>
+      
+       <div class="w3-half w3-container">
+          <h4 id="C1">Connect With Me</h4>
+          <ul>
+           <a href="https://web.facebook.com/alaminmusa.magaga" target="_blank" class="white-text">
+           {% fa5_icon 'facebook-square' 'fab' size='fa-5x' %}
+		 
+          </a>
+          <a href="https://www.youtube.com/channel/UCy3KM0QxpZUTgKjXRVID6-A" target="_blank" >
+			{% fa5_icon 'youtube-square' 'fab' size='fa-5x' %}
+          
+          </a>
+          
+         
+          
+          <a href="https://www.linkedin.com/in/alamin-musa-magaga-8b388118b" target="_blank" class="white-text">
+            {% fa5_icon 'linkedin' 'fab' size='fa-5x' %}
+          </a>
+          
+          </a>
+           <a href="https://github.com/alaminmagaga" target="_blank" class="white-text">
+            {% fa5_icon 'github-square' 'fab' size='fa-5x' %}
+          </a>
+          
+          <a href="alaminmusamagaga@mail.com" target="_blank" class="white-text">
+            {% fa5_icon 'envelope-square' 'fas' size='fa-5x' %}
+        
+          </a>
+          <a href="https://twitter.com/Alamin_Magaga" target="_blank" class="white-text">
+            {% fa5_icon 'twitter-square' 'fab' size='fa-5x' %}
+        
+          </a>
+         
+          </ul>
+    </div> 
+</div>
+</div>
+    
+
+
+</body>
+</html>
